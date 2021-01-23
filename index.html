@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +6,16 @@
   <meta charset="UTF-8">
   <title>D3Times</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <!--<link rel="stylesheet" href="style.css">-->
   <link rel="stylesheet" href="d3Style.css">
 
 </head>
 
 <body>
+    <a href="">Home</a>|
+        <a href="about.html">ABOUT</a>|
+        <a href="file:///C:/Users/nagen/OneDrive/Documents/GitHub/GT-ATL-DATA-PT-09-2020-U-C-2/GT-ATL-DATA-PT-09-2020-U-C-2/19-Project-2/HTML,%20CSS%20and%20JS/index_bargraph.html">Bar_Graph</a>|
+        <a href="file:///C:/Users/nagen/OneDrive/Documents/GitHub/GT-ATL-DATA-PT-09-2020-U-C-2/GT-ATL-DATA-PT-09-2020-U-C-2/19-Project-2/HTML,%20CSS%20and%20JS/map.html">Map</a>|
   <div class="container">
     <div class="row">
       
@@ -20,10 +25,13 @@
       <div class ="row">
       <div class="col-xs-3 col-md-3"></div>
       <a href="Home.html" aria-label="Home" title="Home"></a>
+
+      <img src="https://media4.giphy.com/media/lTGLOH7ml3poQ6JoFg/giphy.gif" alt="Chicken Wings Love GIF by Buffalo Wild Wings">
+      <img src="https://media.giphy.com/media/fMzywf5la8CDPuW9AE/giphy.gif" alt="Beer gaz gif animation">
       
       <div class ="row"></div>
       <div class="col-xs-12 col-md-12"></div>
-      <img src="https://media4.giphy.com/media/lTGLOH7ml3poQ6JoFg/giphy.gif" alt="Chicken Wings Love GIF by Buffalo Wild Wings">
+      
     </div>
     <div class="row">
       <div class="col-xs-12  col-md-9">
@@ -42,15 +50,27 @@
              As the movement grew, and some breweries expanded their production and distribution, the more encompassing concept of craft brewing emerged. 
              A brewpub is a pub that brews its own beer for sale on the premises.</p>
 
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+         
         </div>
       </div>
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Bar_graph</a></li>
+            <li><a class="btab" href="#b_tab" data-toggle="tab">Line Graph</a></li>
+            <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Donut chart</a></li>
+            <li><a class="btab" href="#b_tab" data-toggle="tab">scatter chart</a></li>
+        
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="a_tab">
+                <h1>A</h1>
+                <acontent></acontent>
+            </div>
+            <div class="tab-pane" id="b_tab">
+                <h1>B</h1>
+                <bcontent></bcontent>
+            </div>
+        </div>
     </div>
   </div>
 
@@ -63,8 +83,27 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="19-Project-2/HTML, CSS and JS/assets/js/index_bargraph.js"></script>
 
+  
+        </div>
+        <script>
+            $.ajaxSetup ({
+                // Disable caching of AJAX responses
+                // Used when debugging
+                cache: false
+           
+        
+            $.getScript("19-Project-2/HTML, CSS and JS/assets/js/index_bargraph.js");
+            $(".atab").click(function() {
+                $.getScript("a.js");
+            })
+        </script>
+        <script>
+            $(".btab").click(function() {
+                $.getScript("b.js");
+            })
+        </script>
 </body>
 
 </html>
