@@ -1,0 +1,29 @@
+
+
+create table ba_beerstyles (
+Number INT,
+style VARCHAR,
+category VARCHAR,
+ABV_avg INT, 
+IBU_avg INT,
+SRM_avg INT,
+Glassware VARCHAR,
+Description VARCHAR,
+PRIMARY KEY (Number)
+);
+
+select * from ba_beerstyles;
+
+drop table usa_breweries;
+
+create table usa_breweries (
+id INT,
+name VARCHAR,
+city VARCHAR,
+state VARCHAR,
+country VARCHAR,
+types VARCHAR,
+PRIMARY KEY (id)
+);
+
+select * from usa_breweries;
