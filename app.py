@@ -13,17 +13,6 @@ credentials = "sqlite:///Resources/beer_test.sqlite"
 ####################
 # read in your SQL query results using pandas
 ####################
-Breweries_df = pd.read_sql("SELECT * FROM Breweries", con = credentials)
-Breweries = Breweries_df.to_json(orient = "index")
-
-ba_beerstyles_df = pd.read_sql("SELECT * FROM ba_beerstyles", con = credentials)
-ba_beerstyles = ba_beerstyles_df.to_json()
-
-us_state_data_df = pd.read_sql("SELECT * FROM us_state_data", con = credentials)
-us_state_data = us_state_data_df.to_json()
-
-usa_breweries_df = pd.read_sql("SELECT * FROM usa_breweries", con = credentials)
-usa_breweries = usa_breweries_df.to_json()
 
 ####################
 # database setup
@@ -72,18 +61,34 @@ def map():
 
 @app.route("/map_data")
 def map_data():
+
+    Breweries_df = pd.read_sql("SELECT * FROM Breweries", con = credentials)
+    Breweries = Breweries_df.to_json(orient = "index")
+
     return Breweries
 
 @app.route("/ba_beerstyles")
 def ba_beerstyles():
+
+    ba_beerstyles_df = pd.read_sql("SELECT * FROM ba_beerstyles", con = credentials)
+    ba_beerstyles = ba_beerstyles_df.to_json(orient = "index")
+
     return ba_beerstyles
 
 @app.route("/us_state_data")
 def us_state_data():
+
+    us_state_data_df = pd.read_sql("SELECT * FROM us_state_data", con = credentials)
+    us_state_data = us_state_data_df.to_json(orient = "index")
+
     return us_state_data
 
 @app.route("/usa_breweries")
 def usa_breweries():
+
+    usa_breweries_df = pd.read_sql("SELECT * FROM usa_breweries", con = credentials)
+    usa_breweries = usa_breweries_df.to_json(orient = "index")
+
     return usa_breweries
  
 if __name__ == "__main__":

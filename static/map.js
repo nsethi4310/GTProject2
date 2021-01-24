@@ -41,7 +41,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   // }
 
 
-  d3.json("/map_data", function(response){
+  d3.json(newtry, function(response){
 
     console.log(response[0].brewery_type);
     var mb= response.brewery_type;
