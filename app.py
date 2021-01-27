@@ -1,3 +1,5 @@
+
+  
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -8,7 +10,11 @@ import pandas as pd
 ####################
 # assign a variable that contains a string of your credentials
 ####################
+<<<<<<< Updated upstream
 credentials = "sqlite:///Resources/beer_test.sqlite"
+=======
+credentials = "sqlite:///beer_test.sqlite"
+>>>>>>> Stashed changes
 
 ####################
 # read in your SQL query results using pandas
@@ -49,7 +55,7 @@ app = Flask(__name__)
 ####################
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route("/about")
 def about():
