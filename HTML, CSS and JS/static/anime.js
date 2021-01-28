@@ -7,3 +7,13 @@ anime({
   direction: 'alternate',
   loop: true
 });
+
+anime({
+    targets: '#anime-sunburst path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutSine',
+    duration: 100,
+    delay: function(el, i) { return i * 100 },
+    direction: 'alternate',
+    loop: true
+  });
