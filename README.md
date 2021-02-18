@@ -33,3 +33,10 @@ Figma
 
 ## Screenshots
 
+![Breweries Map](https://github.com/nsethi4310/GTProject2/blob/main/beer_prj/static/images/map.PNG)
+
+![Sunburst Chart](https://github.com/nsethi4310/GTProject2/blob/main/beer_prj/static/images/sunburst2.PNG)
+
+![Scatter Plot](https://github.com/nsethi4310/GTProject2/blob/main/beer_prj/static/images/scatter.PNG)
+
+![The Brew Crew](https://github.com/nsethi4310/GTProject2/blob/main/beer_prj/static/images/brewcrew.PNG)
