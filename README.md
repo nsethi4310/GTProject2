@@ -20,6 +20,7 @@ The goal of this project was to build a website and create visuals analyzing dif
 Python (Flask, Pandas, Plotly Express)
 
 Javascript (Leaflet, D3, Anychart, Anime.js)
+
 HTML (Bootstrap)
 
 CSS
