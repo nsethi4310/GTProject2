@@ -1,17 +1,17 @@
 # Breweries and Microbreweries
 
 ## The Brew Crew
-[Michelle] (https://www.linkedin.com/in/michelle-davis-92548a78/)
+[Michelle](https://www.linkedin.com/in/michelle-davis-92548a78/)
 
-[Ryan] (https://www.linkedin.com/in/ryan-youngblood-14a3bb9b/)
+[Ryan](https://www.linkedin.com/in/ryan-youngblood-14a3bb9b/)
 
-[Nidhi] (https://www.linkedin.com/in/nidhisethimba/)
+[Nidhi](https://www.linkedin.com/in/nidhisethimba/)
 
-[Justin] (https://www.linkedin.com/in/jjying89/)
+[Justin](https://www.linkedin.com/in/jjying89/)
 
-[Nagender] (https://www.linkedin.com/in/nagender-reddy-panyala-phd-0371248/)
+[Nagender](https://www.linkedin.com/in/nagender-reddy-panyala-phd-0371248/)
 
-[Roman] (https://www.linkedin.com/in/roman-koshel/)
+[Roman](https://www.linkedin.com/in/roman-koshel/)
 
 ## Goal
 The goal of this project was to build a website and create visuals analyzing different brewery data in the U.S.
