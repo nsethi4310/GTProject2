@@ -1,5 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <title>Breweries in United States</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="d3Style.css">
+
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
@@ -19,79 +26,94 @@
   
 </style>
 </head>
-<body>
-  <div class="product-navbar-centered"></div>
-  <a href="http://127.0.0.1:5000/">Home</a>|
-  <a href="http://127.0.0.1:5000/about">ABOUT</a>|
-  <a href="http://127.0.0.1:5000/bar">Bar_Graph</a>|
-  <a href="http://127.0.0.1:5000/scatter">Scatter_Graph</a>|
-  <a href="http://127.0.0.1:5000/sunburst">Sunburst_Graph</a>|
-  <a href="http://127.0.0.1:5000/sunburst2">Sunburst2_Graph</a>|
-  <a href="http://127.0.0.1:5000/map">Map</a>|
-   
-  <div id="container"></div>
+
+<body class="text-white" style="background-image: url(https://raw.githubusercontent.com/nsethi4310/GTProject2/roman_branch/home.jpeg?ve=1&tl=1);
+    background-size: cover; background-position:fixed;">
+
+
+<a style="color:#1e828f" href="http://127.0.0.1:5000/">Home</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/bar">Bar Graph</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/scatter">Scatter Graph</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/sunburst">Sunburst Graph</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/sunburst2">Sunburst 2 Graph</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/map">Map</a> |
+<a style="color:#1e828f" href="http://127.0.0.1:5000/about">About</a> |
+              
+        <head>
+          <meta charset="utf-8">
+          <title>margin-top</title>
+          <style>
+           div {
+            padding: 40px;
+            margin-top: 0%;
+           }
+           @font-face {
+          font-family: PSimpsonfont DEMO;
+          src: url(https://github.com/nsethi4310/CoffeeMLProject3/blob/main/coffee_prj/font/Simpsonfont%20DEMO.otf);
+          }
+          a {
+          font-family: Pompadur, 'Comic Sans MS', cursive;
+          }
+          </style>
+         </head>
+
+         <div id="container"></div>
   
 
-  <script>
-
-    anychart.onDocumentReady(function () {
-      // To work with the data adapter you need to reference the data adapter script file from AnyChart CDN
-      // https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js
-
-      // Load CSV data and create a chart by CSV data
-      // The data used in this sample can be obtained from the CDN
-      // https://cdn.anychart.com/samples/general-features/load-csv-data/data.csv
-
-
+         <script>
+       
+           anychart.onDocumentReady(function () {
+             
+             anychart.data.loadCsvFile(
+               'https://raw.githubusercontent.com/nsethi4310/GTProject2/main/beer_prj/csv/us_state_data.csv',
+               function (data) {
+                 //create bar chart
+                 var chart = anychart.bar();
       
-      anychart.data.loadCsvFile(
-        'https://raw.githubusercontent.com/nsethi4310/GTProject2/main/beer_prj/csv/us_state_data.csv',
-        function (data) {
-          //create bar chart
-          var chart = anychart.bar();
+                 // set chart title
+                 chart.title('Number of Breweries in United States');
+       
+                 // create data set on our data
+                 var dataSet = anychart.data.set(data);
+                 // map mapping
+                 var mapping = dataSet.mapAs({ x: 1, value: 2, fill: 6, stroke: 5, label: 6});
+                 
+                 // create bar series
+                 var series = chart.bar();
 
-        //   anychart.data.loadCsvFile(
-        // 'http://127.0.0.1:5000/bar',
-        // function (data) {
-        //   //create bar chart
-        //   var chart = anychart.bar();
-          // set chart title
-          chart.title('Number of Breweries in United States');
+                 // set chart data
+                 series.data(mapping);
+                 //labels font size setting
+                 var labels = chart.xAxis().labels();
+                 labels.fontFamily("Courier");
+                 labels.fontSize(15);
+                 labels.fontColor("#2c4f53");
+                 labels.fontWeight("bold");
+       
+                 var labels = chart.yAxis().labels();
+                 labels.fontFamily("Courier");
+                 labels.fontSize(15);
+                 labels.fontColor("#2c4f53");
+                 labels.fontWeight("bold");
+       
+                // set titles for axises
+                 chart.xAxis().title('State');
+                 chart.yAxis().title('Breweries');
 
-          // create data set on our data
-          var dataSet = anychart.data.set(data);
-          // map mapping
-          var mapping = dataSet.mapAs({ x: 1, value: 2, fill: 6, stroke: 5, label: 6});
-          
-          // create bar series
-          var series = chart.bar();
-          // set chart data
-          series.data(mapping);
-          //labels font size setting
-          var labels = chart.xAxis().labels();
-          labels.fontFamily("Courier");
-          labels.fontSize(15);
-          labels.fontColor("#125393");
-          labels.fontWeight("bold");
+                 chart.background().fill({
+                 keys: ["rgba(104, 143, 30, 0)"],
+                 angle: 130,
+                 });
 
-          var labels = chart.yAxis().labels();
-          labels.fontFamily("Courier");
-          labels.fontSize(15);
-          labels.fontColor("#125393");
-          labels.fontWeight("bold");
+                 // set container id for the chart
+                 chart.container('container');
 
-         // set titles for axises
-          chart.xAxis().title('state');
-          chart.yAxis().title('breweries');
-          
-          // set container id for the chart
-          chart.container('container');
-          // initiate chart drawing
-          chart.draw();
-        }
-      );
-    });
-  
-</script>
-</body>
-</html>
+                 // initiate chart drawing
+                 chart.draw();
+               }
+             );
+           });
+         
+       </script>
+       </body>
+       </html>

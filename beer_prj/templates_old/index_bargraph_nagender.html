@@ -1,0 +1,97 @@
+<html>
+<head>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+  <style type="text/css">
+
+    html,
+    body,
+    #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+</style>
+</head>
+<body>
+  <div class="product-navbar-centered"></div>
+  <a href="http://127.0.0.1:5000/">Home</a>|
+  <a href="http://127.0.0.1:5000/about">ABOUT</a>|
+  <a href="http://127.0.0.1:5000/bar">Bar_Graph</a>|
+  <a href="http://127.0.0.1:5000/scatter">Scatter_Graph</a>|
+  <a href="http://127.0.0.1:5000/sunburst">Sunburst_Graph</a>|
+  <a href="http://127.0.0.1:5000/sunburst2">Sunburst2_Graph</a>|
+  <a href="http://127.0.0.1:5000/map">Map</a>|
+   
+  <div id="container"></div>
+  
+
+  <script>
+
+    anychart.onDocumentReady(function () {
+      // To work with the data adapter you need to reference the data adapter script file from AnyChart CDN
+      // https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js
+
+      // Load CSV data and create a chart by CSV data
+      // The data used in this sample can be obtained from the CDN
+      // https://cdn.anychart.com/samples/general-features/load-csv-data/data.csv
+
+
+      
+      anychart.data.loadCsvFile(
+        'https://raw.githubusercontent.com/nsethi4310/GTProject2/main/beer_prj/csv/us_state_data.csv',
+        function (data) {
+          //create bar chart
+          var chart = anychart.bar();
+
+        //   anychart.data.loadCsvFile(
+        // 'http://127.0.0.1:5000/bar',
+        // function (data) {
+        //   //create bar chart
+        //   var chart = anychart.bar();
+          // set chart title
+          chart.title('Number of Breweries in United States');
+
+          // create data set on our data
+          var dataSet = anychart.data.set(data);
+          // map mapping
+          var mapping = dataSet.mapAs({ x: 1, value: 2, fill: 6, stroke: 5, label: 6});
+          
+          // create bar series
+          var series = chart.bar();
+          // set chart data
+          series.data(mapping);
+          //labels font size setting
+          var labels = chart.xAxis().labels();
+          labels.fontFamily("Courier");
+          labels.fontSize(15);
+          labels.fontColor("#125393");
+          labels.fontWeight("bold");
+
+          var labels = chart.yAxis().labels();
+          labels.fontFamily("Courier");
+          labels.fontSize(15);
+          labels.fontColor("#125393");
+          labels.fontWeight("bold");
+
+         // set titles for axises
+          chart.xAxis().title('state');
+          chart.yAxis().title('breweries');
+          
+          // set container id for the chart
+          chart.container('container');
+          // initiate chart drawing
+          chart.draw();
+        }
+      );
+    });
+  
+</script>
+</body>
+</html>
